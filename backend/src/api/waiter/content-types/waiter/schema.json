@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "waiters",
+  "info": {
+    "singularName": "waiter",
+    "pluralName": "waiters",
+    "displayName": "Waiter"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "boolean",
+      "default": false
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "username": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    }
+  }
+}

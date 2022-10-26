@@ -1,23 +1,24 @@
-import App, { AppContext, AppProps } from "next/app";
-import Head from "next/head";
-import "../styles/globals.css";
-import { createContext } from "react";
-import { fetchAPI } from "../lib/api";
-import { getStrapiMedia } from "../lib/media";
-import { RootObject } from "../types/seo";
+import App, { AppContext, AppProps } from 'next/app'
+import Head from 'next/head'
+import '../styles/globals.css'
+import { createContext } from 'react'
+import { fetchAPI } from '../lib/api'
+import { getStrapiMedia } from '../lib/media'
+import { RootObject } from '../types/seo'
+import Header from '../components/Header'
 
 // Store Strapi Global object in context
 interface ISEOContext {
-  defaultSeo: RootObject;
-  siteName: string;
+  defaultSeo: RootObject
+  siteName: string
 }
 
 export const SEOContext = createContext<ISEOContext>({
   defaultSeo: {
     defaultSeo: {
       id: 0,
-      metaDescription: "",
-      metaTitle: "",
+      metaDescription: '',
+      metaTitle: '',
       shareImage: {
         data: {
           attributes: {},
@@ -26,11 +27,11 @@ export const SEOContext = createContext<ISEOContext>({
       },
     },
   },
-  siteName: "",
-});
+  siteName: '',
+})
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const { global } = pageProps;
+  const { global } = pageProps
 
   return (
     <>
@@ -41,23 +42,24 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <SEOContext.Provider value={global.attributes}>
+        <Header />
         <Component {...pageProps} />
       </SEOContext.Provider>
     </>
-  );
-};
+  )
+}
 
 MyApp.getInitialProps = async (ctx: AppContext) => {
-  const appProps = await App.getInitialProps(ctx);
-  const globalRes = await fetchAPI("/global", {
+  const appProps = await App.getInitialProps(ctx)
+  const globalRes = await fetchAPI('/global', {
     populate: {
-      favicon: "*",
+      favicon: '*',
       defaultSeo: {
-        populate: "*",
+        populate: '*',
       },
     },
-  });
-  return { ...appProps, pageProps: { global: globalRes.data } };
-};
+  })
+  return { ...appProps, pageProps: { global: globalRes.data } }
+}
 
-export default MyApp;
+export default MyApp

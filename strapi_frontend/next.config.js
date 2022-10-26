@@ -4,8 +4,9 @@ const nextConfig = {
   swcMinify: true,
   images: {
     loader: 'default',
-    domains: ['localhost:1337'],
+    domains: ['127.0.0.1'],
   },
+
 }
 
 module.exports = nextConfig

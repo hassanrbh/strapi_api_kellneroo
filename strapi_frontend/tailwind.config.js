@@ -5,7 +5,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      borderRadius: {
+        "super": "0px 0px 0px 65px"
+      }
+    },
   },
   plugins: [],
 }

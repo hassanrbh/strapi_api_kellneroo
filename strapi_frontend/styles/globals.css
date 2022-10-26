@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.rounded_image {
+  border-radius: '0px 0px 0px 65px;'
+}

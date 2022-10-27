@@ -3,6 +3,7 @@ import { fetchAPI, getStrapiURL } from '../../lib/api'
 import Seo from '../../modules/seo/seo'
 import { Articles } from '../../types/articles'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type IIndex = {
   articles: Articles[]
@@ -11,7 +12,7 @@ type IIndex = {
 
 const Index = ({ articles, homepage }: IIndex) => {
   return (
-    <div className={'container mx-auto px-10 '}>
+    <div className={'container mx-auto'}>
       <Seo seo={homepage.attributes.seo} />
       <div className={'mt-4'}>
         <div className={'text-black font-[300] text-xs'}>
@@ -23,29 +24,32 @@ const Index = ({ articles, homepage }: IIndex) => {
         </div>
         <ul className={'grid grid-cols-3'}>
           {articles.map((article) => (
-            <li key={article.id}>
-              <Image
-                className={'rounded-super'}
-                src={getStrapiURL(
-                  article.attributes.background.data.attributes.url
-                )}
-                alt={
-                  article.attributes.background.data.attributes.alternativeText
-                }
-                width={325}
-                height={190}
-              />
-              <h3 className={'font-semibold text-2xl text-[#070707]'}>
-                {article.attributes.title}
-              </h3>
-              <p className={'font-normal text-base'}>
-                {article.attributes.description}
-              </p>
-              <div>
-                <p>{article.attributes.createdAt.toString()}</p>
-                <p>{article.attributes.writer.data.attributes.name}</p>
-              </div>
-            </li>
+            <Link href={`/blogs/${article.attributes.slug}`}>
+              <li key={article.id}>
+                <Image
+                  className={'rounded-super'}
+                  src={getStrapiURL(
+                    article?.attributes?.background?.data?.attributes?.url
+                  )}
+                  alt={
+                    article?.attributes?.background?.data?.attributes
+                      ?.alternativeText
+                  }
+                  width={325}
+                  height={190}
+                />
+                <h3 className={'font-semibold text-2xl text-[#070707]'}>
+                  {article.attributes.title}
+                </h3>
+                <p className={'font-normal text-base'}>
+                  {article.attributes.description}
+                </p>
+                <div>
+                  <p>{article?.attributes?.createdAt.toString()}</p>
+                  <p>{article?.attributes?.writer?.data?.attributes?.name}</p>
+                </div>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

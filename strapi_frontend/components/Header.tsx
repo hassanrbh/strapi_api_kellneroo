@@ -10,6 +10,7 @@ interface HeaderProps {
 
 function Header() {
   const router = useRouter()
+  console.log(router.pathname)
   const currentRoute = router.pathname
 
   const headerTitles: HeaderProps[] = [
@@ -20,7 +21,7 @@ function Header() {
     },
     {
       name: 'Blog',
-      path: '/blog',
+      path: '/blogs',
       key: '2',
     },
     {
@@ -135,24 +136,29 @@ function Header() {
           </Link>
         </div>
         <div className="flex space-x-10 font-medium text-sm	cursor-pointer">
-          {headerTitles.map(({ name, path, key }) => (
-            <Link
-              className="no-underline hover:no-underline"
-              key={key}
-              href={path}
-            >
-              <p
-                className={`text-white pr-10 no-underline ${
-                  router.pathname === '/blog' ? 'text-primary' : ''
-                }`}
-              >
-                {name}
-              </p>
-            </Link>
-          ))}
+          <Link
+            href="/"
+            className={`no-underline hover:no-underline hover: transition-underline duration-200 inline
+               hover:opacity-50${
+                 router.pathname === '/' ? 'text-white underline' : 'text-gray'
+               }`}
+          >
+            <p>Home</p>
+          </Link>
+          <Link
+            href="/blogs"
+            className={`no-underline hover:no-underline transition-underline duration-200 inline
+            hover:opacity-50 ${
+              router.pathname === '/blogs'
+                ? 'text-white underline'
+                : 'text-gray'
+            }`}
+          >
+            <p>Blogs</p>
+          </Link>
         </div>
         <div>
-          <button className="text-black bg-white radius p-3 rounded-xl">
+          <button className="text-black bg-white radius p-3 rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
             Anmelden
           </button>
         </div>

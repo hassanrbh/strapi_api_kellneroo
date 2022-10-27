@@ -2,39 +2,37 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-interface HeaderProps {
-  name: string
-  path: string
-  key: string
-}
+// interface HeaderProps {
+//   name: string
+//   path: string
+//   key: string
+// }
 
 function Header() {
   const router = useRouter()
-  console.log(router.pathname)
-  const currentRoute = router.pathname
 
-  const headerTitles: HeaderProps[] = [
-    {
-      name: 'Home',
-      path: '/home',
-      key: '1',
-    },
-    {
-      name: 'Blog',
-      path: '/blogs',
-      key: '2',
-    },
-    {
-      name: 'Lorem',
-      path: '/lorem',
-      key: '3',
-    },
-    {
-      name: 'Lorem',
-      path: '/lorem',
-      key: '4',
-    },
-  ]
+  // const headerTitles: HeaderProps[] = [
+  //   {
+  //     name: 'Home',
+  //     path: '/home',
+  //     key: '1',
+  //   },
+  //   {
+  //     name: 'Blog',
+  //     path: '/blogs',
+  //     key: '2',
+  //   },
+  //   {
+  //     name: 'Lorem',
+  //     path: '/lorem',
+  //     key: '3',
+  //   },
+  //   {
+  //     name: 'Lorem',
+  //     path: '/lorem',
+  //     key: '4',
+  //   },
+  // ]
 
   return (
     <>

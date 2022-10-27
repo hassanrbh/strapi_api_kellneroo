@@ -3,7 +3,6 @@ import { fetchAPI, getStrapiURL } from '../../lib/api'
 import Seo from '../../modules/seo/seo'
 import { Articles } from '../../types/articles'
 import Image from 'next/image'
-import Link from 'next/link'
 
 type IIndex = {
   articles: Articles[]
@@ -12,28 +11,28 @@ type IIndex = {
 
 const Index = ({ articles, homepage }: IIndex) => {
   return (
-    <div className={'container mx-auto'}>
-      <Seo seo={homepage.attributes.seo} />
-      <div className={'mt-4'}>
-        <div className={'text-black font-[300] text-xs'}>
-          Sie sind hier: Kellneroo {'>'}{' '}
-          <span className={'text-black font-medium'}>Blog</span>
-        </div>
-        <div className={'text-[##423A3F] font-bold text-[54px] text-center'}>
-          Our blog posts
-        </div>
-        <ul className={'grid grid-cols-3'}>
-          {articles.map((article) => (
-            <Link href={`/blogs/${article.attributes.slug}`}>
+    <div>
+      <div className={'container mx-auto px-10 '}>
+        <Seo seo={homepage.attributes.seo} />
+        <div className={'mt-4'}>
+          <div className={'text-black font-[300] text-xs'}>
+            Sie sind hier: Kellneroo {'>'}{' '}
+            <span className={'text-black font-medium'}>Blog</span>
+          </div>
+          <div className={'text-[##423A3F] font-bold text-[54px] text-center'}>
+            Our blog posts
+          </div>
+          <ul className={'grid grid-cols-3'}>
+            {articles.map((article) => (
               <li key={article.id}>
                 <Image
                   className={'rounded-super'}
                   src={getStrapiURL(
-                    article?.attributes?.background?.data?.attributes?.url
+                    article.attributes.background.data.attributes.url
                   )}
                   alt={
-                    article?.attributes?.background?.data?.attributes
-                      ?.alternativeText
+                    article.attributes.background.data.attributes
+                      .alternativeText
                   }
                   width={325}
                   height={190}
@@ -45,13 +44,13 @@ const Index = ({ articles, homepage }: IIndex) => {
                   {article.attributes.description}
                 </p>
                 <div>
-                  <p>{article?.attributes?.createdAt.toString()}</p>
-                  <p>{article?.attributes?.writer?.data?.attributes?.name}</p>
+                  <p>{article.attributes.createdAt.toString()}</p>
+                  <p>{article.attributes.writer.data.attributes.name}</p>
                 </div>
               </li>
-            </Link>
-          ))}
-        </ul>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   )

@@ -1,55 +1,52 @@
 import React from 'react'
-import { fetchAPI, getStrapiURL } from '../../lib/api'
+import { fetchAPI } from '../../lib/api'
 import Seo from '../../modules/seo/seo'
 import { Articles } from '../../types/articles'
-import Image from 'next/image'
+import Blogs from '../../modules/blogs/Blogs'
 
 type IIndex = {
-  articles: Articles[]
+  blogs: Articles[]
   homepage: any
 }
 
-const Index = ({ articles, homepage }: IIndex) => {
+const Index = ({ blogs, homepage }: IIndex) => {
   return (
     <div>
-      <div className={'container mx-auto px-10 '}>
+      <div>
+        <svg
+          width="100%"
+          height="481"
+          viewBox="0 0 1440 481"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className={'rounded-super'}
+        >
+          <rect width="1441" height="420" fill="#4A7081" />
+        </svg>
+      </div>
+
+      <div className={'container mx-auto'}>
         <Seo seo={homepage.attributes.seo} />
-        <div className={'mt-4'}>
+        <div className={''}>
           <div className={'text-black font-[300] text-xs'}>
             Sie sind hier: Kellneroo {'>'}{' '}
-            <span className={'text-black font-medium'}>Blog</span>
+            <span className={'text-black font-medium ml-1'}>All Blogs</span>
           </div>
-          <div className={'text-[##423A3F] font-bold text-[54px] text-center'}>
+          <div
+            className={
+              'text-[##423A3F] font-bold text-[54px] my-10 text-center'
+            }
+          >
             Our blog posts
           </div>
-          <ul className={'grid grid-cols-3'}>
-            {articles.map((article) => (
-              <li key={article.id}>
-                <Image
-                  className={'rounded-super'}
-                  src={getStrapiURL(
-                    article.attributes.background.data.attributes.url
-                  )}
-                  alt={
-                    article.attributes.background.data.attributes
-                      .alternativeText
-                  }
-                  width={325}
-                  height={190}
-                />
-                <h3 className={'font-semibold text-2xl text-[#070707]'}>
-                  {article.attributes.title}
-                </h3>
-                <p className={'font-normal text-base'}>
-                  {article.attributes.description}
-                </p>
-                <div>
-                  <p>{article.attributes.createdAt.toString()}</p>
-                  <p>{article.attributes.writer.data.attributes.name}</p>
-                </div>
-              </li>
+        </div>
+
+        <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+          <div className="grid w-full grid-cols-3 gap-6 mx-auto lg:grid-cols-1">
+            {blogs.map((blog) => (
+              <Blogs key={blog.id} blog={blog} />
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -57,8 +54,8 @@ const Index = ({ articles, homepage }: IIndex) => {
 }
 
 export async function getStaticProps() {
-  const [articlesRes, homepageRes] = await Promise.all([
-    fetchAPI('/blogs', { populate: '*' }),
+  const [blogsRes, homepageRes] = await Promise.all([
+    fetchAPI('/blogs', { populate: '*' }), // all the relationship, images ....
     fetchAPI('/homepage', {
       populate: {
         hero: '*',
@@ -69,7 +66,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articles: articlesRes.data,
+      blogs: blogsRes.data,
       homepage: homepageRes.data,
     },
     revalidate: 1,

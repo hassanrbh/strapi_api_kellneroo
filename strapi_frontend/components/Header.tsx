@@ -34,6 +34,8 @@ function Header() {
   //   },
   // ]
 
+  console.log(router.pathname)
+
   return (
     <>
       <div className="bg-primaryDark flex items-center justify-around py-10 font-archia">
@@ -136,27 +138,28 @@ function Header() {
         <div className="flex space-x-10 font-medium text-sm	cursor-pointer">
           <Link
             href="/"
-            className={`no-underline hover:no-underline hover: transition-underline duration-200 inline
-               hover:opacity-50${
-                 router.pathname === '/' ? 'text-white underline' : 'text-gray'
-               }`}
+            className={`no-underline font-semibold text-sm hover:no-underline hover:transition-underline duration-200 inline hover:text-[#777777] ${
+              router.pathname === '/'
+                ? 'text-white underline'
+                : 'text-[#777777]'
+            }`}
           >
             <p>Home</p>
           </Link>
           <Link
             href="/blogs"
-            className={`no-underline hover:no-underline transition-underline duration-200 inline
-            hover:opacity-50 ${
+            className={`no-underline hover:no-underline font-semibold text-sm transition-underline duration-200 inline
+            hover:text-[#777777] ${
               router.pathname === '/blogs'
                 ? 'text-white underline'
-                : 'text-gray'
+                : 'text-[#777777]'
             }`}
           >
             <p>Blogs</p>
           </Link>
         </div>
         <div>
-          <button className="text-black bg-white radius p-3 rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
+          <button className="text-black bg-white font-semibold radius p-3 rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
             Anmelden
           </button>
         </div>

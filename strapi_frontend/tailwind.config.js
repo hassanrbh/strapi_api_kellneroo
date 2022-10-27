@@ -17,6 +17,7 @@ module.exports = {
       },
       borderRadius: {
         super: '0px 0px 0px 65px',
+        help: "0px 0px 0px 130px",
       },
     },
     screens: {

@@ -6,3 +6,58 @@ active {
   color: red;
 }
 
+.rounded-corner {
+  border-bottom-left-radius: 100px;
+}
+
+.image-size {
+  min-width: 350px;
+  min-height: 250px;
+  max-height: 250px;
+  /* max-width: 350px; */
+  width: 100%;
+  border-bottom-left-radius: 65px;
+}
+
+.break-word {
+  overflow-wrap: break-word;
+}
+
+.link-width {
+  width: 380px;
+}
+
+.link-width:hover {
+  box-shadow: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+}
+
+.blog-title {
+  margin: 20px 0;
+  color: #070707;
+  font-family: 'Archia';
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 24px;
+  letter-spacing: 2px;
+}
+
+.blog-description {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #070707;
+  font-family: 'Archia';
+  font-size: 20px;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+  line-height: 24px;
+  font-weight: 300;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

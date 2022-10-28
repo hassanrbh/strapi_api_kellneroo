@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render() {
@@ -10,6 +10,8 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches"
           />
+          <link rel="stylesheet" href="global.css" type="text/css" />
+
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/css/uikit.min.css"
@@ -32,8 +34,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

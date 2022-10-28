@@ -10,31 +10,37 @@ type Props = {
 
 const Blogs = ({ blog }: Props) => {
   return (
-    <Link href={`/blogs/${blog.attributes.slug}`} key={blog.id}>
-      <div className="p-6">
+    <Link
+      className="link-width"
+      href={`/blogs/${blog.attributes.slug}`}
+      key={blog.id}
+    >
+      <div className="p-6 mx-auto">
         <Image
-          className={'rounded-super'}
+          className="image-size mx-auto hover:shadow-xl"
           src={getStrapiURL(blog.attributes.background.data.attributes.url)}
           alt={blog.attributes.background.data.attributes.alternativeText}
           width={325}
           height={230}
         />
 
-        <h2 className="mb-8 text-2xl font-semibold tracking-widest text-[#070707] mt-4">
-          {blog.attributes.title}
-        </h2>
+        <h2 className="blog-title font-archia">{blog.attributes.title}</h2>
 
-        <h1 className="mx-auto mb-8 text-base  font-[400] leading-none tracking-tighter text-[#070707] lg:text-3xl break-words">
+        <h5 className="blog-description text-base break-word">
           {blog.attributes.description}
-        </h1>
+        </h5>
 
-        <div className={'flex text-[#A1A1A1] font-bold text-xs '}>
-          <p>
+        <div
+          className={
+            'font-archia flex text-[#A1A1A1] font-bold text-xs d-flex gap-3'
+          }
+        >
+          <p className="pr-2">
             {new Date(blog.attributes.createdAt).toLocaleDateString('en-US', {
-              weekday: 'short',
               year: 'numeric',
-              month: undefined,
+              weekday: 'short',
               day: 'numeric',
+              month: undefined,
             })}
           </p>
           <p className={'ml-4'}>

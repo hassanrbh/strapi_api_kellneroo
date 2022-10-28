@@ -11,34 +11,9 @@ import { useRouter } from 'next/router'
 function Header() {
   const router = useRouter()
 
-  // const headerTitles: HeaderProps[] = [
-  //   {
-  //     name: 'Home',
-  //     path: '/home',
-  //     key: '1',
-  //   },
-  //   {
-  //     name: 'Blog',
-  //     path: '/blogs',
-  //     key: '2',
-  //   },
-  //   {
-  //     name: 'Lorem',
-  //     path: '/lorem',
-  //     key: '3',
-  //   },
-  //   {
-  //     name: 'Lorem',
-  //     path: '/lorem',
-  //     key: '4',
-  //   },
-  // ]
-
-  console.log(router.pathname)
-
   return (
-    <>
-      <div className="bg-primaryDark flex items-center justify-around py-10 font-archia">
+    <div className="bg-primaryDark">
+      <div className="flex items-center justify-between py-10 font-archia container">
         <div className="cursor-pointer">
           <Link href="/">
             <svg
@@ -164,7 +139,7 @@ function Header() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

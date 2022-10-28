@@ -2,13 +2,13 @@ import React from 'react'
 import { fetchAPI, getStrapiURL } from '../../lib/api'
 import { Articles } from '../../types/articles'
 import { BooksAttributes } from '../../types/books'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import {
+//   faFacebook,
+//   faTwitter,
+//   faInstagram,
+//   faYoutube,
+// } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
 
 const Blog = ({
@@ -58,12 +58,12 @@ const Blog = ({
         >
           {blog.attributes.description}
         </p>
-        <div className={'flex items-center gap-3 text-black mt-2'}>
+        {/* <div className={'flex items-center gap-3 text-black mt-2'}>
           <FontAwesomeIcon icon={faFacebook} width={'21px'} />
           <FontAwesomeIcon icon={faTwitter} width={'21px'} />
           <FontAwesomeIcon icon={faInstagram} width={'21px'} />
           <FontAwesomeIcon icon={faYoutube} width={'21px'} />
-        </div>
+        </div> */}
       </div>
       <div className={'mt-10'}>
         <Image

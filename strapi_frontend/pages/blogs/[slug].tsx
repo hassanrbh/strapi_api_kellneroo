@@ -48,10 +48,14 @@ const Blog = ({
             {blog.attributes.writer.data.attributes.name}
           </div>
         </div>
-        <div className={'mt-2 font-[600] text-[54px] text-[#1A1A1A]'}>
+        <div
+          className={'mt-2 font-[600] text-[54px] text-[#1A1A1A] font-archia'}
+        >
           {blog.attributes.title}
         </div>
-        <p className={'font-[300] text-2xl text-[#1A1A1A] max-w-md'}>
+        <p
+          className={'font-[300] text-2xl text-[#1A1A1A] max-w-md font-archia'}
+        >
           {blog.attributes.description}
         </p>
         <div className={'flex items-center gap-3 text-black mt-2'}>
@@ -71,6 +75,29 @@ const Blog = ({
           quality={100}
           priority
         />
+      </div>
+      <div className={'flex justify-between items-center container mx-auto'}>
+        <summary>
+          <ul>
+            <div className={'text-lg text-[500] text-black'}>SUMMARY</div>
+            {blog.attributes.articles.data.map((article, idx) => (
+              <li key={article.id} className={'text-lg text-[500] font-archia'}>
+                {idx + 1}. {article.attributes.title}
+              </li>
+            ))}
+          </ul>
+        </summary>
+        <div>
+          {blog.attributes.articles.data.map((article) => (
+            <div key={article.id}>
+              <p>{article.attributes.title}</p>
+              <div>{article.attributes.content}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h1 className={'font-raleway text-2xl font-bold'}>TRENDING ARTICLES</h1>
       </div>
     </div>
   )

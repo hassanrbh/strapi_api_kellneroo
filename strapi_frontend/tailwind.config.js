@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         archia: ['Archia'],
+        raleway: ["Raleway"]
       },
       borderRadius: {
         super: '0px 0px 0px 65px',

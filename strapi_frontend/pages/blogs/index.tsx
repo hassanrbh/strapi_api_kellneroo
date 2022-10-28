@@ -1,15 +1,63 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import { fetchAPI } from '../../lib/api'
 import Seo from '../../modules/seo/seo'
 import { Articles } from '../../types/articles'
 import Blogs from '../../modules/blogs/Blogs'
+import { GetServerSidePropsContext } from 'next'
+import Pagination from '@mui/material/Pagination'
+import PaginationItem from '@mui/material/PaginationItem'
+import { MAX_PAGE_SIZE } from './constants'
+import Link from 'next/link'
 
 type IIndex = {
-  blogs: Articles[]
+  blogs: {
+    data: Articles[]
+    meta: {
+      pagination: {
+        page: number
+        pageSize: number
+        pageCount: number
+        total: number
+      }
+    }
+  }
   homepage: any
+  page: string
 }
 
-const Index = ({ blogs, homepage }: IIndex) => {
+const Index = ({ blogs, homepage, page }: IIndex) => {
+  useLayoutEffect(() => {
+    if (blogs.data.length >= 9) {
+      window.scrollTo({
+        top: 1000,
+        left: 400,
+        behavior: 'smooth',
+      })
+    } else {
+      window.scrollTo({
+        top: 600,
+        left: 400,
+        behavior: 'smooth',
+      })
+    }
+  }, [page, blogs.data.length])
+
+  // const useStyles = makeStyles(() => ({
+  //   li: {
+  //     '& .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected': {
+  //       back: '',
+  //     },
+  //   },
+  // }))
+
+  // const handleChangeOfPaginationPos = () => {
+  //   window.scrollTo({
+  //     top: 800,
+  //     left: 400,
+  //     behavior: 'smooth',
+  //   })
+  // }
+
   return (
     <div className="mb-20">
       <div className="bg-primary pt-36 rounded-corner">
@@ -3654,12 +3702,10 @@ const Index = ({ blogs, homepage }: IIndex) => {
 
       <div className="text-black text-sm container font-Archia tracking-wider pt-4">
         Sie sind hier: Kellneroo {'>'}{' '}
-        <span className="text-black font-medium ml-1 font-[600]">
-          All Blogs
-        </span>
+        <span className="text-black ml-1 font-[600]">All Blogs</span>
       </div>
 
-      <div className={'container mx-auto'}>
+      <div className={'container mx-auto mb-[100px]'}>
         <Seo seo={homepage.attributes.seo} />
         <div
           className={
@@ -3670,18 +3716,58 @@ const Index = ({ blogs, homepage }: IIndex) => {
         </div>
 
         <div className="grid grid-cols-3 gap-y-8 px-4 place-items-center">
-          {blogs.map((blog) => (
+          {blogs.data.map((blog) => (
             <Blogs key={blog.id} blog={blog} />
           ))}
         </div>
       </div>
+      {/* <div>
+        <button
+          onClick={() => {
+            Router.push(`/blogs/?page=${parseInt(page) + 1}`)
+          }}
+        >
+          +
+        </button>
+
+        <button
+          onClick={() => {
+            Router.push(`/blogs/?page=${parseInt(page) - 1}`)
+          }}
+        >
+          -
+        </button>
+      </div> */}
+
+      <Pagination
+        page={parseInt(page)}
+        count={blogs.meta.pagination.pageCount}
+        className={'flex justify-center'}
+        showFirstButton
+        showLastButton
+        renderItem={(item) => (
+          <PaginationItem
+            component={Link}
+            href={`/blogs${item.page === 1 ? '' : `?page=${item.page}`}`}
+            {...item}
+          />
+        )}
+      />
     </div>
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps({
+  query: { page = '1' },
+}: GetServerSidePropsContext) {
   const [blogsRes, homepageRes] = await Promise.all([
-    fetchAPI('/blogs', { populate: '*' }), // all the relationship, images ....
+    fetchAPI('/blogs', {
+      populate: '*',
+      pagination: {
+        page: page,
+        pageSize: MAX_PAGE_SIZE,
+      },
+    }), // all the relationship, images ....
     fetchAPI('/homepage', {
       populate: {
         hero: '*',
@@ -3692,10 +3778,10 @@ export async function getStaticProps() {
 
   return {
     props: {
-      blogs: blogsRes.data,
+      blogs: blogsRes,
       homepage: homepageRes.data,
+      page: page,
     },
-    revalidate: 1,
   }
 }
 

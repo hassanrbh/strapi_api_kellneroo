@@ -61,3 +61,8 @@ active {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.Mui-selected {
+  background-color: #423A3F !important;
+  color: white !important;
+}

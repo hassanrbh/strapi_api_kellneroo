@@ -1,15 +1,14 @@
-import qs from "qs";
+import qs from 'qs'
 
 /**
  * Get full Strapi URL from path
  * @param {string} path Path of the URL
  * @returns {string} Full Strapi URL
  */
-export function getStrapiURL(path = "") {
+export function getStrapiURL(path = '') {
   return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://127.0.0.1:1337"
-  }${path}`;
-  
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://127.0.0.1:1337'
+  }${path}`
 }
 
 /**
@@ -19,33 +18,35 @@ export function getStrapiURL(path = "") {
  * @param {Object} options Options passed to fetch
  * @returns Parsed API call response
  */
-export async function fetchAPI(path: string, urlParamsObject = {}, options = {}) {
+export async function fetchAPI(
+  path: string,
+  urlParamsObject = {},
+  options = {}
+) {
   // Merge default and user options
   const mergedOptions = {
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     ...options,
-  };
+  }
 
   // Build request URL
-  const queryString = qs.stringify(urlParamsObject);
+  const queryString = qs.stringify(urlParamsObject)
   const requestUrl = `${getStrapiURL(
-    `/api${path}${queryString ? `?${queryString}` : ""}`
-  )}`;
-
+    `/api${path}${queryString ? `?${queryString}` : ''}`
+  )}`
 
   // Trigger API call
-  const response = await fetch(requestUrl, mergedOptions);
-  console.log(response)
+  const response = await fetch(requestUrl, mergedOptions)
 
   // Handle response
   if (!response.ok) {
-    console.error(response.statusText);
+    console.error(response.statusText)
 
-    console.log(response);
-    throw new Error(`An error occured please try again`);
+    console.log(response)
+    throw new Error(`An error occured please try again`)
   }
-  const data = await response.json();
-  return data;
+  const data = await response.json()
+  return data
 }

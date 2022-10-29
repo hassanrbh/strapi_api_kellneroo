@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 import { fetchAPI } from '../../lib/api'
 import Seo from '../../modules/seo/seo'
+// import { Link } from 'next/link'
 import { Articles } from '../../types/articles'
 import Blogs from '../../modules/blogs/Blogs'
 import { GetServerSidePropsContext } from 'next'

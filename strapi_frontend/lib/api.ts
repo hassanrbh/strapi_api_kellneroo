@@ -39,6 +39,7 @@ export async function fetchAPI(
 
   // Trigger API call
   const response = await fetch(requestUrl, mergedOptions)
+  // console.log(response)
 
   // Handle response
   if (!response.ok) {

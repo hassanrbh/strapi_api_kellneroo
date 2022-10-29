@@ -37,8 +37,8 @@ const Blogs = ({ blog }: Props) => {
         >
           <p className="pr-2">
             {new Date(blog.attributes.createdAt).toLocaleDateString('en-US', {
+              weekday: 'long',
               year: 'numeric',
-              weekday: 'short',
               day: 'numeric',
               month: undefined,
             })}

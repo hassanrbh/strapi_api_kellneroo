@@ -1,8 +1,13 @@
 import React from 'react'
 import { fetchAPI } from '../../lib/api'
 import Seo from '../../modules/seo/seo'
+// import { Link } from 'next/link'
 import { Articles } from '../../types/articles'
 import Blogs from '../../modules/blogs/Blogs'
+import Pagination from '@mui/material/Pagination'
+import PaginationItem from '@mui/material/PaginationItem'
+import { useRouter } from 'next/router'
+import { AppProps } from 'next/app'
 
 type IIndex = {
   blogs: Articles[]
@@ -3654,9 +3659,7 @@ const Index = ({ blogs, homepage }: IIndex) => {
 
       <div className="text-black text-sm container font-Archia tracking-wider pt-4">
         Sie sind hier: Kellneroo {'>'}{' '}
-        <span className="text-black font-medium ml-1 font-[600]">
-          All Blogs
-        </span>
+        <span className="text-black ml-1 font-[600]">All Blogs</span>
       </div>
 
       <div className={'container mx-auto'}>
@@ -3675,11 +3678,25 @@ const Index = ({ blogs, homepage }: IIndex) => {
           ))}
         </div>
       </div>
+      {/* 
+      <Pagination
+        // page={page}
+        count={10}
+        renderItem={(item) => (
+          <PaginationItem
+            // component={Link}
+            to={`/inbox${item.page === 1 ? '' : `?page=${item.page}`}`}
+            {...item}
+          />
+        )}
+      /> */}
     </div>
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(context: AppProps) {
+  console.log(111, context)
+
   const [blogsRes, homepageRes] = await Promise.all([
     fetchAPI('/blogs', { populate: '*' }), // all the relationship, images ....
     fetchAPI('/homepage', {

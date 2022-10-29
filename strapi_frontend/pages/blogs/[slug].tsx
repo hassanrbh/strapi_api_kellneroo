@@ -72,6 +72,10 @@ const Blog = ({
           width={blog.attributes.background.data.attributes.width}
           alt={blog.attributes.background.data.attributes.alternativeText}
           height={830}
+          placeholder="blur"
+          blurDataURL={getStrapiURL(
+            blog.attributes.background.data.attributes.url
+          )}
           quality={100}
           priority
         />

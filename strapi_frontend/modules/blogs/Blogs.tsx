@@ -11,7 +11,10 @@ type Props = {
 const Blogs = ({ blog }: Props) => {
   return (
     <Link
-      className="link-width"
+      className="link-width "
+      style={{
+        height: '-webkit-fill-available',
+      }}
       href={`/blogs/${blog.attributes.slug}`}
       key={blog.id}
     >
@@ -21,14 +24,18 @@ const Blogs = ({ blog }: Props) => {
           src={getStrapiURL(blog.attributes.background.data.attributes.url)}
           alt={blog.attributes.background.data.attributes.alternativeText}
           width={325}
+          blurDataURL={getStrapiURL(
+            blog.attributes.background.data.attributes.url
+          )}
           height={230}
+          placeholder="blur"
         />
 
         <h2 className="blog-title font-archia">{blog.attributes.title}</h2>
 
-        <h5 className="blog-description text-base break-word">
+        <p className="blog-description text-base break-word pr-[30px]">
           {blog.attributes.description}
-        </h5>
+        </p>
 
         <div
           className={
@@ -43,7 +50,7 @@ const Blogs = ({ blog }: Props) => {
               month: undefined,
             })}
           </p>
-          <p className={'ml-4'}>
+          <p className={'ml-[14px]'}>
             {blog.attributes.writer.data.attributes.name}
           </p>
         </div>

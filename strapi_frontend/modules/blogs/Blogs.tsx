@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { RefObject } from 'react'
 import { getStrapiURL } from '../../lib/api'
 import { Articles } from '../../types/articles'
 import Image from 'next/image'

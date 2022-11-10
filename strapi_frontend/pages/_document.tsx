@@ -1,4 +1,7 @@
+import { createGetInitialProps } from '@mantine/next'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+const getInitialProps = createGetInitialProps()
 
 class MyDocument extends Document {
   render() {
@@ -11,7 +14,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Staatliches"
           />
           <link rel="stylesheet" href="global.css" type="text/css" />
-
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/uikit@3.10.1/dist/css/uikit.min.css"
@@ -28,6 +30,7 @@ class MyDocument extends Document {
             async
             src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js"
           />
+          <script>var Alert = ReactBootstrap.Alert;</script>
         </Head>
         <body>
           <Main />

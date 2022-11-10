@@ -2,18 +2,12 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-// interface HeaderProps {
-//   name: string
-//   path: string
-//   key: string
-// }
-
 function Header() {
   const router = useRouter()
 
   return (
     <div className="bg-primaryDark">
-      <div className="flex items-center justify-between py-10 font-archia container">
+      <div className="flex items-center justify-between px-12 py-10 font-archia container">
         <div className="cursor-pointer">
           <Link href="/">
             <svg

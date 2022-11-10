@@ -1,67 +1,29 @@
 import React, { useLayoutEffect } from 'react'
 import { fetchAPI } from '../../lib/api'
 import Seo from '../../modules/seo/seo'
-// import { Link } from 'next/link'
-import { Articles } from '../../types/articles'
 import Blogs from '../../modules/blogs/Blogs'
 import { GetServerSidePropsContext } from 'next'
 import Pagination from '@mui/material/Pagination'
 import PaginationItem from '@mui/material/PaginationItem'
-import { MAX_PAGE_SIZE } from './constants'
+
+import { MAX_PAGE_SIZE } from '../../types/constants'
 import Link from 'next/link'
 
-type IIndex = {
-  blogs: {
-    data: Articles[]
-    meta: {
-      pagination: {
-        page: number
-        pageSize: number
-        pageCount: number
-        total: number
-      }
-    }
-  }
-  homepage: any
-  page: string
-}
+import { AllBlogsTypes } from '../../types/blogs'
 
-const Index = ({ blogs, homepage, page }: IIndex) => {
+const Index = ({ blogs, homepage, page }: AllBlogsTypes) => {
   useLayoutEffect(() => {
-    if (blogs.data.length >= 9) {
-      window.scrollTo({
-        top: 1000,
-        left: 400,
-        behavior: 'smooth',
-      })
-    } else {
-      window.scrollTo({
-        top: 600,
-        left: 400,
-        behavior: 'smooth',
-      })
-    }
+    if (parseInt(page) === 1) return
+    window.scrollTo({
+      left: 400,
+      top: 600,
+      behavior: 'smooth',
+    })
   }, [page, blogs.data.length])
-
-  // const useStyles = makeStyles(() => ({
-  //   li: {
-  //     '& .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected': {
-  //       back: '',
-  //     },
-  //   },
-  // }))
-
-  // const handleChangeOfPaginationPos = () => {
-  //   window.scrollTo({
-  //     top: 800,
-  //     left: 400,
-  //     behavior: 'smooth',
-  //   })
-  // }
 
   return (
     <div className="mb-20">
-      <div className="bg-primary pt-36 rounded-corner">
+      <div className="bg-primaryColor pt-36 rounded-corner">
         <svg
           width="90%"
           height="328"
@@ -3722,23 +3684,6 @@ const Index = ({ blogs, homepage, page }: IIndex) => {
           ))}
         </div>
       </div>
-      {/* <div>
-        <button
-          onClick={() => {
-            Router.push(`/blogs/?page=${parseInt(page) + 1}`)
-          }}
-        >
-          +
-        </button>
-
-        <button
-          onClick={() => {
-            Router.push(`/blogs/?page=${parseInt(page) - 1}`)
-          }}
-        >
-          -
-        </button>
-      </div> */}
 
       <Pagination
         page={parseInt(page)}

@@ -6,6 +6,7 @@ import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 import { RootObject } from '../types/seo'
 import Header from '../components/Header'
+import { MantineProvider } from '@mantine/core'
 
 // Store Strapi Global object in context
 interface ISEOContext {
@@ -42,8 +43,17 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <SEOContext.Provider value={global.attributes}>
-        <Header />
-        <Component {...pageProps} />
+        <MantineProvider
+          withGlobalStyles
+          withNormalizeCSS
+          theme={{
+            /** Put your mantine theme override here */
+            colorScheme: 'light',
+          }}
+        >
+          <Header />
+          <Component {...pageProps} />
+        </MantineProvider>
       </SEOContext.Provider>
     </>
   )

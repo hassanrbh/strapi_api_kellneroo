@@ -5,7 +5,6 @@ import Blogs from '../../modules/blogs/Blogs'
 import { GetServerSidePropsContext } from 'next'
 import Pagination from '@mui/material/Pagination'
 import PaginationItem from '@mui/material/PaginationItem'
-
 import { MAX_PAGE_SIZE } from '../../types/constants'
 import Link from 'next/link'
 

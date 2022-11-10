@@ -30,7 +30,6 @@ class MyDocument extends Document {
             async
             src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js"
           />
-          <script>var Alert = ReactBootstrap.Alert;</script>
         </Head>
         <body>
           <Main />

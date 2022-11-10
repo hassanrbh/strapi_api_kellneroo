@@ -31,7 +31,7 @@ const Index = ({ blogs, homepage, page }: IIndex) => {
     if (blogs.data.length >= 9) {
       window.scrollTo({
         top: 1000,
-        left: 400,
+        left: 401,
         behavior: 'smooth',
       })
     } else {

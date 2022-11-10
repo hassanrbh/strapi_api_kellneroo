@@ -12,12 +12,19 @@ import { AllBlogsTypes } from '../../types/blogs'
 
 const Index = ({ blogs, homepage, page }: AllBlogsTypes) => {
   useLayoutEffect(() => {
-    if (parseInt(page) === 1) return
-    window.scrollTo({
-      left: 400,
-      top: 600,
-      behavior: 'smooth',
-    })
+    if (blogs.data.length >= 9) {
+      window.scrollTo({
+        top: 1000,
+        left: 401,
+        behavior: 'smooth',
+      })
+    } else {
+      window.scrollTo({
+        top: 600,
+        left: 400,
+        behavior: 'smooth',
+      })
+    }
   }, [page, blogs.data.length])
 
   return (

@@ -128,7 +128,7 @@ function Header() {
           </Link>
         </div>
         <div>
-          <button className="text-black bg-white font-body radius p-3 rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
+          <button className="text-black bg-white font-body p-3 rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
             Anmelden
           </button>
         </div>

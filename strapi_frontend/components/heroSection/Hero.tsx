@@ -31,12 +31,17 @@ function HeroSection() {
                   fill="#4A7081"
                 />
               </svg>
+
               <div className="flex flex-col justify-center">
                 <p className="text-primaryColor">Location</p>
                 <h3 className="text-primaryColor text-2xl">München, Germany</h3>
               </div>
-              <SearchInput />
-              <button className=""></button>
+            </div>
+            <SearchInput />
+            <div className="mt-5 min-w-full">
+              <button className="bg-primaryColor p-3 text[20px] rounded-bl-3xl rounded-tr-3xl rounded-br-3xl w-full text-white">
+                Suchen
+              </button>
             </div>
           </div>
         </div>

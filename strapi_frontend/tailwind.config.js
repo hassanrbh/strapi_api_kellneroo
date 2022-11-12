@@ -10,15 +10,17 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#4A7081',
+        primaryColor: '#4A7081',
         primaryDark: '#384D55',
         whiteL: '#fff',
         black: '#000',
         blogsPage: '#070707',
+        cardsGray: '#EAEAEA',
+        heroGray: '#989898',
+        lightGreen: '#CCFA69',
       },
       fontFamily: {
-        archia: ['Archia'],
-        raleway: ['Raleway'],
+        body: ['archiaregular'],
       },
       borderRadius: {
         super: '0px 0px 0px 65px',
@@ -32,7 +34,7 @@ module.exports = {
       laptop: '1024px',
       // => @media (min-width: 1024px) { ... }
 
-      desktop: '1440px',
+      desktop: '1280px',
       // => @media (min-width: 1280px) { ... }
     },
   },

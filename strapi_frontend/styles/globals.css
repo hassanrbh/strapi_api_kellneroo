@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  div {
+    font-family: archiaregular;
+  }
+}
+
+@font-face {
+  font-family: 'archiaregular';
+  src: url('archia-regular-webfont.eot');
+  src: url('archia-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('archia-regular-webfont.woff2') format('woff2'),
+    url('archia-regular-webfont.woff') format('woff'),
+    url('archia-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 active {
   color: red;
 }
@@ -60,6 +84,15 @@ active {
 }
 
 .Mui-selected {
-  background-color: #423A3F !important;
+  background-color: #423a3f !important;
   color: white !important;
+}
+
+.customTrack .mantine-Switch-body .mantine-Switch-track {
+  background: #ccfa69 !important;
+  border-color: #4a7081 !important;
+}
+
+.customTrack .mantine-Switch-body .mantine-Switch-track .mantine-Switch-thumb {
+  border-color: #ccfa69 !important;
 }

@@ -2,18 +2,12 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-// interface HeaderProps {
-//   name: string
-//   path: string
-//   key: string
-// }
-
 function Header() {
   const router = useRouter()
 
   return (
     <div className="bg-primaryDark">
-      <div className="flex items-center justify-between py-10 font-archia container">
+      <div className="flex items-center justify-between px-12 py-10 font-body container">
         <div className="cursor-pointer">
           <Link href="/">
             <svg
@@ -134,7 +128,7 @@ function Header() {
           </Link>
         </div>
         <div>
-          <button className="text-black bg-white font-semibold radius p-3 rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
+          <button className="text-black bg-white font-body radius p-3 rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
             Anmelden
           </button>
         </div>

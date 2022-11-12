@@ -16,10 +16,11 @@ module.exports = {
         black: '#000',
         blogsPage: '#070707',
         cardsGray: '#EAEAEA',
+        heroGray: '#989898',
+        lightGreen: '#CCFA69',
       },
       fontFamily: {
-        archia: ['Archia'],
-        raleway: ['Raleway'],
+        body: ['archiaregular'],
       },
       borderRadius: {
         super: '0px 0px 0px 65px',

@@ -3668,12 +3668,10 @@ const Index = ({ blogs, homepage, page }: AllBlogsTypes) => {
           />
         </svg>
       </div>
-
       <div className="text-black text-sm container font-Archia tracking-wider pt-4">
         Sie sind hier: Kellneroo {'>'}{' '}
         <span className="text-black ml-1 font-[600]">All Blogs</span>
       </div>
-
       <div className={'container mx-auto mb-[100px]'}>
         <Seo seo={homepage.attributes.seo} />
         <div
@@ -3690,7 +3688,8 @@ const Index = ({ blogs, homepage, page }: AllBlogsTypes) => {
           ))}
         </div>
       </div>
-
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment //
+      @ts-ignore
       <Pagination
         page={parseInt(page)}
         count={blogs.meta.pagination.pageCount}

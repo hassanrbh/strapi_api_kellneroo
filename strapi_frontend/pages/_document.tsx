@@ -1,7 +1,7 @@
-import { createGetInitialProps } from '@mantine/next'
+// import { createGetInitialProps } from '@mantine/next'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-const getInitialProps = createGetInitialProps()
+// const getInitialProps = createGetInitialProps()
 
 class MyDocument extends Document {
   render() {
@@ -9,10 +9,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* eslint-disable-next-line */}
-          <link
+          {/* <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches"
-          />
+          /> */}
           <link rel="stylesheet" href="global.css" type="text/css" />
           <link
             rel="stylesheet"

@@ -96,3 +96,9 @@ active {
 .customTrack .mantine-Switch-body .mantine-Switch-track .mantine-Switch-thumb {
   border-color: #ccfa69 !important;
 }
+
+.MuiOutlinedInput-root {
+  border-radius: 10px;
+  border-color: #d5d5d5;
+  background-color: #d5d5d5;
+}

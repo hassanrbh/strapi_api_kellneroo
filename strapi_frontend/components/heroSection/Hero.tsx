@@ -10,7 +10,7 @@ function HeroSection() {
           <h1 className="text-white text-4xl mb-6">
             Die schnellste Gastro-Job-Matching-App der Welt.
           </h1>
-          <div className="w-[20rem] bg-cardsGray rounded-2xl p-4 flex-col">
+          <div className="w-[20rem] bg-cardsGray rounded-2xl p-[1.5rem] flex-col">
             <h3 className="text-primaryColor text-2xl pr-10">
               Hey Gastro-Freund, was suchst Du?
             </h3>

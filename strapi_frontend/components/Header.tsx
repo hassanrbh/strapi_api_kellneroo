@@ -113,7 +113,7 @@ function Header() {
                 : 'text-[#777777]'
             }`}
           >
-            <p>Home</p>
+            <p className="text-[1.5rem]">Home</p>
           </Link>
           <Link
             href="/blogs"
@@ -124,11 +124,11 @@ function Header() {
                 : 'text-[#777777]'
             }`}
           >
-            <p>Blogs</p>
+            <p className="text-[1.5rem]">Blogs</p>
           </Link>
         </div>
         <div>
-          <button className="text-black bg-white font-body p-3 rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
+          <button className="text-black text-[1.5rem] bg-white font-body pl-[2.5rem] pr-[1.5rem] py-[1rem] rounded-bl-3xl rounded-tl-3xl rounded-br-3xl">
             Anmelden
           </button>
         </div>

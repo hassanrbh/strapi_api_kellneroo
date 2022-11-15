@@ -28,7 +28,7 @@ function Card({ index }: TCard) {
 
   return (
     <div
-      className={`mb-[0.6rem] rounded-[0.6rem] flex bg-white mr-2 drop-shadow-lg	${styles.card}`}
+      className={`mb-[1rem] rounded-[1rem] flex bg-white mr-2 drop-shadow-lg	${styles.card}`}
     >
       {/* Left Side of Card */}
       <div className="relative h-90">
@@ -42,7 +42,7 @@ function Card({ index }: TCard) {
             // borderRadius: '0.6rem',
           }}
         ></div>
-        <p className="absolute text-[9px] bg-lightGreen rounded-[10px] pr-[7px] pl-[7px] top-1 left-1">
+        <p className="absolute text-[0.9rem] bg-lightGreen rounded-[1rem] pr-[0.7rem] pl-[0.7rem] top-1 left-1">
           NEU
         </p>
         <span className="absolute left-[50%] translate-x-[-50%] flex gap-x-2 bottom-2 ">
@@ -70,24 +70,24 @@ function Card({ index }: TCard) {
       {/* Right side of Card */}
 
       <div className="font-body">
-        <div className="bg-[#F1F1F1] p-[0.5rem] rounded-tr-[10px] flex-col">
+        <div className="bg-[#F1F1F1] p-[1rem] rounded-tr-[1rem] flex-col">
           <div className="flex justify-between font-body">
-            <h3 className="text-[20px]">Viktor</h3>
+            <h3 className="text-[2rem]">Viktor</h3>
             <div className="flex items-center">
               <div
                 style={{ background: index % 2 ? '#FDCB4A' : '#8AD300' }}
                 className="w-2 mr-1 h-2 rounded-[50%]"
               ></div>
-              <span className="text-[10px] mt-[2px] mr-2">
+              <span className="text-[1rem] mt-[0.2rem] mr-2">
                 {index % 2 ? 'Gestern ' : 'Online'}
               </span>
             </div>
           </div>
           <div className="font-body flex item-center ">
-            <p className="text-[12px] bg-lightGreen rounded-[10px] pl-2 pr-2">
+            <p className="text-[1.2rem] bg-lightGreen rounded-[1rem] pl-2 pr-2">
               Verfügbar
             </p>
-            <div className="bg-[#433A3F] flex items-center rounded-[10px] ml-[10px] pl-2 pr-2 text-[10px] text-white">
+            <div className="bg-[#433A3F] flex items-center rounded-[1rem] ml-[1rem] pl-2 pr-2 text-[10px] text-white">
               <Image
                 src={Message}
                 alt="Picture of the author"
@@ -103,7 +103,7 @@ function Card({ index }: TCard) {
                 <p
                   key={idx}
                   style={{ marginLeft: idx > 2 ? '0px' : '' }}
-                  className={`border-[1px] border-black pl-3 pr-3 text-[13px] rounded-[10px] flex ml-2 items-center ${styles.job__tag}`}
+                  className={`border-[0.1rem] border-black pl-3 pr-3 text-[1.3rem] rounded-[1rem] flex ml-2 items-center ${styles.job__tag}`}
                 >
                   <Image
                     src={Clock}
@@ -118,7 +118,7 @@ function Card({ index }: TCard) {
             })}
           </div>
         </div>
-        <div className="bg-white flex item-center justify-between m-[0.5rem] mb-0 rounded-b-[0.7rem]">
+        <div className="bg-white flex item-center justify-between m-[1rem] mb-0 rounded-b-[1rem]">
           <Image
             className="cursor-pointer"
             src={Dots}

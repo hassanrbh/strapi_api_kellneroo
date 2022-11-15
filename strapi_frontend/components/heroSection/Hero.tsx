@@ -5,21 +5,21 @@ import SwitchComponent from '../switch/SwitchComponent'
 
 function HeroSection() {
   return (
-    <div className="bg-primaryColor py-16 h-90">
-      <div className="container flex p-9">
-        <div className="flex flex-col align-middle w-[60%]">
-          <h1 className="text-white text-4xl mb-12 pr-2 text-[42px]">
+    <div className="bg-primaryColor py-20 border-left">
+      <div className="container flex p-10">
+        <div className="flex flex-col align-middle w-[70%]">
+          <h1 className="text-white mb-12 pr-2 text-[4rem]">
             Die schnellste Gastro-Job Plattform der Welt.
           </h1>
-          <div className="w-[20rem] bg-cardsGray rounded-2xl p-[1.5rem] flex-col">
-            <h3 className="text-primaryColor text-2xl pr-10">
+          <div className="w-[32rem] bg-cardsGray rounded-2xl p-[2rem] flex-col">
+            <h3 className="text-primaryColor text-[2.5rem] pr-7">
               Hey Gastro-Freund, was suchst Du?
             </h3>
             <SwitchComponent />
-            <h3 className="text-primaryColor text-2xl mt-4 mb-4">
+            <h3 className="text-primaryColor text-[2.5rem] mb-[.5rem]">
               Wo suchts Du?
             </h3>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 mb-[1.5rem]">
               <svg
                 width="20"
                 height="25"
@@ -34,15 +34,15 @@ function HeroSection() {
               </svg>
 
               <div className="flex flex-col justify-center">
-                <p className="text-primaryColor">Location</p>
-                <h3 className="text-primaryColor text-[20px]">
+                <p className="text-primaryColor text-[1.4rem]">Location</p>
+                <h3 className="text-primaryColor text-[2.5rem]">
                   München, Germany
                 </h3>
               </div>
             </div>
             <SearchInput />
-            <div className="mt-5 min-w-full h-full">
-              <button className="bg-primaryColor p-3 text[20px] rounded-bl-3xl rounded-tr-3xl rounded-br-3xl w-full text-white">
+            <div className="mt-5 w-full">
+              <button className="bg-primaryColor p-3 text-[2rem] rounded-bl-3xl rounded-tr-3xl rounded-br-3xl w-full text-white">
                 Suchen
               </button>
             </div>

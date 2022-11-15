@@ -15,6 +15,11 @@
   }
 }
 
+html {
+  font-size: 62.5%;
+}
+
+/*  PAGE GLOBAL STYLES  */
 @font-face {
   font-family: 'archiaregular';
   src: url('archia-regular-webfont.eot');
@@ -38,7 +43,6 @@ active {
   min-width: 350px;
   min-height: 250px;
   max-height: 250px;
-  /* max-width: 350px; */
   width: 100%;
   border-bottom-left-radius: 65px;
 }
@@ -98,7 +102,7 @@ active {
 }
 
 .MuiOutlinedInput-root {
-  border-radius: 10px;
+  border-radius: 1rem;
   border-color: #d5d5d5;
   background-color: #d5d5d5;
 }
@@ -126,6 +130,46 @@ active {
   width: 130px;
   height: 166px;
 }
+
+.border-left {
+  border-bottom-left-radius: 130px;
+  height: 90vh;
+}
+
+.swiper {
+  width: 50%;
+  height: 50%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  width: 400px !important;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BROWSER SCROLLBAR */
 
 ::-webkit-scrollbar {
   width: 7px;

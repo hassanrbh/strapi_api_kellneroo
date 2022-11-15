@@ -10,16 +10,16 @@ type Props = {}
 const CssTextField = withStyles({
   root: {
     '& .MuiTextField-root': {
-      border: '1px solid #d5d5d5',
+      border: '0.1rem solid #d5d5d5',
     },
     '& label.Mui-focused': {},
     '& .MuiInput-underline:after': {},
     '& .MuiOutlinedInput-root': {
-      marginTop: '5px',
+      marginTop: '0.5rem',
       '& input': {
-        fontSize: '13px',
+        fontSize: '1.5rem',
         fontFamily: 'archiaregular',
-        padding: '15px 0px',
+        padding: '1.5rem 0rem',
       },
       '& fieldset': {
         borderColor: '#d5d5d5',
@@ -49,7 +49,6 @@ function SearchInput({}: Props) {
   return (
     <>
       <FormControl className={styles.form__control}>
-        {/* <CssTextField label="Custom CSS" variant="outlined" /> */}
         <CssTextField
           id="search-input"
           size="small"

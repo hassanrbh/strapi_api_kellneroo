@@ -102,3 +102,46 @@ active {
   border-color: #d5d5d5;
   background-color: #d5d5d5;
 }
+
+.like,
+.bookmark,
+.comment {
+  cursor: pointer;
+}
+
+.like path:hover {
+  fill: #4a7081;
+}
+
+.bookmark path:hover {
+  fill: rgb(146, 146, 47);
+}
+
+.comment path:hover {
+  fill: green;
+}
+
+.author-image {
+  background-image: url('../assets//img//profile.svg');
+  width: 130px;
+  height: 166px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  padding-left: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #648fa3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b7cbd3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

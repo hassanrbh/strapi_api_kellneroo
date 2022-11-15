@@ -1,14 +1,15 @@
 import React from 'react'
+import SearchSection from '../heroSearchSection/SearchSection'
 import SearchInput from '../searchInput/SearchInput'
 import SwitchComponent from '../switch/SwitchComponent'
 
 function HeroSection() {
   return (
-    <div className="bg-primaryColor">
+    <div className="bg-primaryColor py-16 h-90">
       <div className="container flex p-9">
-        <div className="flex flex-col align-middle">
-          <h1 className="text-white text-4xl mb-6">
-            Die schnellste Gastro-Job-Matching-App der Welt.
+        <div className="flex flex-col align-middle w-[60%]">
+          <h1 className="text-white text-4xl mb-12 pr-2 text-[42px]">
+            Die schnellste Gastro-Job Plattform der Welt.
           </h1>
           <div className="w-[20rem] bg-cardsGray rounded-2xl p-[1.5rem] flex-col">
             <h3 className="text-primaryColor text-2xl pr-10">
@@ -34,11 +35,13 @@ function HeroSection() {
 
               <div className="flex flex-col justify-center">
                 <p className="text-primaryColor">Location</p>
-                <h3 className="text-primaryColor text-2xl">München, Germany</h3>
+                <h3 className="text-primaryColor text-[20px]">
+                  München, Germany
+                </h3>
               </div>
             </div>
             <SearchInput />
-            <div className="mt-5 min-w-full">
+            <div className="mt-5 min-w-full h-full">
               <button className="bg-primaryColor p-3 text[20px] rounded-bl-3xl rounded-tr-3xl rounded-br-3xl w-full text-white">
                 Suchen
               </button>
@@ -46,16 +49,7 @@ function HeroSection() {
           </div>
         </div>
 
-        <div className="show-results-here w-3/4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-          delectus. Eum, ipsum itaque adipisci laudantium culpa sunt
-          perspiciatis, dicta maiores tempora reprehenderit veniam repellat
-          perferendis illum cum aspernatur commodi libero. Commodi maiores culpa
-          maxime dignissimos excepturi atque eum. Dolore ratione iure cum neque
-          eveniet. Ratione, porro. Voluptatem iusto, vero culpa dolore ut totam
-          fugit libero aut, ad beatae, voluptates dolorum? Alias error quasi
-          odio facere, quidem eveniet voluptatibus quas soluta laboriosam est a.
-        </div>
+        <SearchSection />
       </div>
     </div>
   )

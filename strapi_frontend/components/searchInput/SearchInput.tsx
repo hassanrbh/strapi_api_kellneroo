@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
-import {
-  FormControl,
-  InputAdornment,
-  OutlinedInputProps,
-  TextField,
-  TextFieldProps,
-} from '@mui/material'
+import { FormControl, InputAdornment, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import styles from './Search.module.css'
@@ -18,17 +12,14 @@ const CssTextField = withStyles({
     '& .MuiTextField-root': {
       border: '1px solid #d5d5d5',
     },
-    '& label.Mui-focused': {
-      // color: 'green',
-    },
-    '& .MuiInput-underline:after': {
-      // borderBottomColor: 'green',
-    },
+    '& label.Mui-focused': {},
+    '& .MuiInput-underline:after': {},
     '& .MuiOutlinedInput-root': {
       marginTop: '5px',
       '& input': {
-        fontSize: '15px',
+        fontSize: '13px',
         fontFamily: 'archiaregular',
+        padding: '15px 0px',
       },
       '& fieldset': {
         borderColor: '#d5d5d5',
@@ -60,7 +51,6 @@ function SearchInput({}: Props) {
       <FormControl className={styles.form__control}>
         {/* <CssTextField label="Custom CSS" variant="outlined" /> */}
         <CssTextField
-          injectFirst
           id="search-input"
           size="small"
           placeholder="Stadt, Postleitzahl"

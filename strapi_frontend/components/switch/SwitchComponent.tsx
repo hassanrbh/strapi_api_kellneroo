@@ -20,7 +20,7 @@ function SwitchComponent() {
   }, [checked])
 
   return (
-    <div className="flex items-center justify-start">
+    <div className="flex items-center justify-start pt-[15px] pb-[15px]">
       <span
         style={{ color: searchType === 'Personal' ? '#4A7081' : '#989898' }}
         className="text-[23px] pr-2 font[500] text-primaryColor font-archia"

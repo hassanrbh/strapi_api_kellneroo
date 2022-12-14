@@ -1,14 +1,16 @@
 import React from 'react'
 import HeroSection from '../components/heroSection/Hero'
-import FeaturesPage from '../components/featuresSection/Features'
-import FindUser from '../components/userslider/FindUser'
+import AppStore from '../components/appStore/appStore'
+import { NewsLetter } from '../components/newsletter/NewsLetter'
+import { DownLoad } from '../components/DownloadPage/DownloadPage'
 
 function Home() {
   return (
     <div>
       <HeroSection />
-      <FindUser />
-      <FeaturesPage />
+      <AppStore />
+      <NewsLetter />
+      <DownLoad />
     </div>
   )
 }

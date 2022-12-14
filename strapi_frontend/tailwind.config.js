@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         primaryColor: '#4A7081',
         primaryDark: '#384D55',
+        secondaryColor: "#DAFC4A",
         whiteL: '#fff',
         black: '#000',
         blogsPage: '#070707',
@@ -23,8 +24,9 @@ module.exports = {
         body: ['archiaregular'],
       },
       borderRadius: {
-        super: '0px 0px 0px 65px',
+        super: '0px 0px 35px 35px',
         help: '0px 0px 0px 130px',
+        extraHelp: "0px 35px 0px 0px"
       },
     },
     screens: {

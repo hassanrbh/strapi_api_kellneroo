@@ -8,9 +8,6 @@ import Moon from '../../assets/icon/moon.svg'
 import Message from '../../assets/icon/message.svg'
 import Dots from '../../assets/icon/3dots.svg'
 import Clock from '../../assets/icon/clock.svg'
-import Comment from '../../assets/icon/comment.svg'
-import Like from '../../assets/icon/like.svg'
-import Bookmark from '../../assets/icon/bookmark.svg'
 
 import styles from '../heroSearchSection/Search.module.css'
 

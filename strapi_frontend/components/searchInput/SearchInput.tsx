@@ -3,9 +3,7 @@ import { FormControl, InputAdornment, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
 import styles from './Search.module.css'
-import { createStyles, withStyles, makeStyles } from '@mui/styles'
-
-type Props = {}
+import { withStyles } from '@mui/styles'
 
 const CssTextField = withStyles({
   root: {
@@ -18,8 +16,8 @@ const CssTextField = withStyles({
       marginTop: '0.5rem',
       '& input': {
         fontSize: '1.5rem',
-        fontFamily: 'archiaregular',
-        padding: '1.5rem 0rem',
+        padding: '1.5rem',
+        fontFamily: 'archiaregular ',
       },
       '& fieldset': {
         borderColor: '#d5d5d5',
@@ -34,7 +32,7 @@ const CssTextField = withStyles({
   },
 })(TextField)
 
-function SearchInput({}: Props) {
+function SearchInput() {
   const [showClearIcon, setShowClearIcon] = useState('none')
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -42,7 +40,6 @@ function SearchInput({}: Props) {
   }
 
   const handleClick = (): void => {
-    // TODO: Clear the search input
     console.log('clicked the clear icon...')
   }
 
@@ -58,7 +55,7 @@ function SearchInput({}: Props) {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon />
+                <SearchIcon fontSize="large" className={'text-5xl'} />
               </InputAdornment>
             ),
             endAdornment: (

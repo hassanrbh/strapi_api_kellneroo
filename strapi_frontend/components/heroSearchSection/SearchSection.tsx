@@ -6,7 +6,7 @@ function SearchBox() {
   const n = 10
   return (
     <div
-      className={`${styles.search__results} rounded-[1rem] h-[62.2rem] p-[2rem] bg-[#577E8F] font-body w-[70%]`}
+      className={`${styles.search__results} rounded-[1rem] h-[62.2rem] p-[2rem] bg-[#577E8F] font-body w-[50%]`}
     >
       <h6 className="text-white text-[2rem] mb-2">
         Dein Ergebnis für Personal in München

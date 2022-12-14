@@ -6,9 +6,9 @@ import { fetchAPI } from '../lib/api'
 import { getStrapiMedia } from '../lib/media'
 import { RootObject } from '../types/seo'
 import Header from '../components/Header'
+import { PrimaryFooter, SecondaryFooter } from '../components/Footer/footer'
 
-// Store Strapi Global object in context
-interface ISEOContext {
+export interface ISEOContext {
   defaultSeo: RootObject
   siteName: string
 }
@@ -44,6 +44,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <SEOContext.Provider value={global.attributes}>
         <Header />
         <Component {...pageProps} />
+        <SecondaryFooter />
+        <PrimaryFooter />
       </SEOContext.Provider>
     </>
   )

@@ -1,28 +1,28 @@
 import React from 'react'
 import SearchSection from '../heroSearchSection/SearchSection'
 import SearchInput from '../searchInput/SearchInput'
-import SwitchComponent from '../switch/SwitchComponent'
 
 function HeroSection() {
   return (
     <div className="bg-primaryColor py-20 border-left">
       <div className="container flex p-10">
-        <div className="flex flex-col align-middle w-[70%]">
-          <h1 className="text-white mb-12 pr-2 text-[4rem]">
-            Die schnellste Gastro-Job Plattform der Welt.
-          </h1>
-          <div className="w-[32rem] bg-cardsGray rounded-2xl p-[2rem] flex-col">
-            <h3 className="text-primaryColor text-[2.5rem] pr-7">
-              Hey Gastro-Freund, was suchst Du?
-            </h3>
-            <SwitchComponent />
-            <h3 className="text-primaryColor text-[2.5rem] mb-[.5rem]">
-              Wo suchts Du?
+        <div className="flex flex-col align-middle items-center w-[50%] mt-14 mr-14">
+          <div
+            className={
+              ' p-[2rem] max-w-[428px] shadow-md font-extrabold text-[2.5rem] text-primaryColor bg-secondaryColor w-[100%] h-[113.4px] rounded-extraHelp'
+            }
+          >
+            Der schnellste Weg, um die besten Jobs zu finden.
+          </div>
+          <div className="w-[428px] bg-cardsGray p-[3.5rem] rounded-super flex-col">
+            <h3 className="text-primaryColor text-[2.5rem] pr-7 mb-10">
+              In welcher Stadt magst Du jobben?
             </h3>
             <div className="flex items-center gap-3 mb-[1.5rem]">
               <svg
-                width="20"
-                height="25"
+                width="30"
+                height="30"
+                className={'relative bottom-5'}
                 viewBox="0 0 20 25"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ function HeroSection() {
                 />
               </svg>
 
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center mb-10">
                 <p className="text-primaryColor text-[1.4rem]">Location</p>
                 <h3 className="text-primaryColor text-[2.5rem]">
                   München, Germany
@@ -41,11 +41,14 @@ function HeroSection() {
               </div>
             </div>
             <SearchInput />
-            <div className="mt-5 w-full">
-              <button className="bg-primaryColor p-3 text-[2rem] rounded-bl-3xl rounded-tr-3xl rounded-br-3xl w-full text-white">
-                Suchen
+            <div className="mt-9 w-full">
+              <button className="bg-primaryColor p-5 text-[2rem] rounded-bl-3xl rounded-tr-3xl rounded-br-3xl w-full text-white">
+                Finden
               </button>
             </div>
+          </div>
+          <div className={'text-white text-2xl mt-12 text-center'}>
+            Made and hosted in the EU 🇪🇺
           </div>
         </div>
 
